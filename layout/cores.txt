@@ -1,0 +1,9 @@
+
+
+// CORES
+
+preto - #0000
+verde - #52bfa9
+rosa - #c02f5b
+cinza - #ddd
+cinza claro - #f1f1f1
