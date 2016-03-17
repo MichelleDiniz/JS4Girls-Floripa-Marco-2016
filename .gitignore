@@ -1,0 +1,8 @@
+node_modules
+.tmp
+.sass-cache
+.idea
+npm-debug.log
+.DS_Store
+dist
+*.map
