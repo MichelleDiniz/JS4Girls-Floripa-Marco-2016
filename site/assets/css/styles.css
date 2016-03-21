@@ -57,6 +57,7 @@ a:hover {
 
 /* ESTILOS DO HEADER */
 .header {
+  background: #fff;
   padding-top: 15px;
   padding-bottom: 15px;
   box-shadow: 0 3px 4px rgba(0,0,0, 0.3);
@@ -82,7 +83,7 @@ a:hover {
 /* ESTILOS DO BANNER */
 .bg {
   /* define altura máxima para meu banner */
-  max-height: 450px;
+  height: 450px;
   /* esconde parte da imagem que for maior que a minha altura */
   overflow: hidden;
   position: relative;
@@ -90,7 +91,15 @@ a:hover {
 
 .bg img {
   /* força a minha imagem do .bg a ocupar sempre 100% de largura */
-  width: 100%;
+  min-width: 100%;
+  /* faz com que a imagem tenha posição fixa na tela, então quando fizermos o scroll na página,
+   *  a imagem vai ficar fixa */
+  position: fixed;
+  /* força o index para -1, assim vai ficar "abaixo" de todos os elementos da pagina, para isso, 
+   * todos os outros elementos tem que ter cor de background, se não a imagem vai ficar como background
+   * dos conteudos */
+  z-index: -1;
+  top: 0;
 }
 
 /* essa mágica é legal. a gente agora vai colocar uma máscara escura acima da nossa imagem,
@@ -126,6 +135,7 @@ a:hover {
 
 /* ESTILOS DO CONTEUDO */
 .main-content {
+  background: #fff;
   text-align: center;
   padding-bottom: 50px;
   padding-top: 50px;
