@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+//Declaração do doctype
+<head>
+   <title>
+   Validação formulário com javascript
+     </title>
+	 //título que será visto na abinha do navegador
+
+<script>
+<!--
+//Abertura de tag para escrever javascript dentro do código HTML.
+
+function ValidEnviar() {
+//estamos iniciando uma função do javascript, com instruções do que deverá ser feito. Função sempre começa com a palavra (function), nome da função e em seguida (){}
+var valor1 = document.Validform.valor1.value;
+//Aqui declaramos nossa variável, de nome valor 1, que recebe: o documento do nosso formulário de nome validform (veja a tag form com atenção, olhe o nome), com o valor do campo valor 1(ou seja, o nosso primeiro input).
+//Entendendo o rolo: a nossa variável valor1, recebe o nosso formulário, e encontra o valor do nosso primeiro input, e guarda esse valor.
+var valor2 = document.Validform.valor2.value;
+//A mesma coisa, nossa variável valor2, recebe o nosso formulário de nomme validform, e o valor do campo 2.
+
+if (valor1 == ""){
+//Aqui iniciamos um if (se) Ou seja, (se valor1) nossa variável declarada anteriormente, for igual a "" (vaziu")
+document.getElementById("mensagem_form").innerHTML +="Não pode ficar em branco, por favor, digite seu nome</br>";
+//Vá lá no documento, procure pelo ID "texto", e escreva: Não pode ficar em branco, por favor, digite seu nome...
+document.Validform.valor1.focus()
+//E além de enviar a mensagem, vá no formulário, de nome (validform), ache o campo (valor1), e dê foco do cursor nele.
+return false;
+//Se nada disso acontecer (o valor não for vaziu, não dê foco, então, retorne falso, e não faça nada!)
+}
+if (valor2 == ""){
+document.getElementById("texto2").innerHTML +="Não pode ficar em branco, digite sua senha</br>";
+document.Validform.valor2.focus()
+return false;
+}
+}
+//A mesma lógica anterior.
+
+-->
+</script>
+//Fim da Tag script.
+   </head>
+<body>
+<h1>
+formulário
+</h1>
+<form role="main" name="Validform" method="post" action="">
+//Tag form, com o role="main" atributo do Way-Aria, para designar conteúdos principais da página.
+<label for="valor1">Digite seu nome</label>
+//Label (dando o título para nosso campo nome), com identificação (for="valor1".)
+<input autofocus accesskey="n"  type="text" name="valor1" id="valor1"/>
+//Campo input, com um novo atributo (autofocus), serve para dar foco do cursor diretamente no campo ao carregar a página, (pode olhar como exemplo este código, ao carregar o cursor cai diretamente no campo nome. Outro exemplo, a página do google, ao carregar o cursor cai direto no campo para fazer a busca).
+//Também de novo aqui temos o atributo "accesskey" (traduzindo, tecla de acesso), ou seja, com este atributo podemos atribuir uma tecla de acesso rápido ao nosso campo (no caso a tecla atribuída para este campo foi a letra "N"), este atributo é muito legal e interessante colocar (faz um diferencial)
+
+<div id="texto" role="alert">
+</div>
+//Aqui temos uma div, com o ID "texto", e a div está vazia, porque o texto que será gerado nela, será dinamicamente via javascript.
+//O atributo role="alert" também contido na div, é do Way-Aria, e serve para o leitor de telas ler instantaneamente o texto da div (gerado dinamicamente via javascript) Recomendo sempre ao gerar textos dinâmicos (principalmente de validação de formulários, ou, textos que necessitam atenção do usuário), utilizar o role="alert".
+
+<label for="valor2">Digite sua senha</label>
+<input role="form" accesskey="s"  type="password" name="valor2" id="valor2"/>
+//Aqui segue a mesma lógica do nosso input anterior, apenas sem o atributo autofocus, porque o autofocus só é utilizado apenas uma vez (porque não tem como colocar foco em 2 campos de uma única vez).
+
+<div id="texto2" role="alert">
+</div>
+//Nossa div que será gerada via javascript, igual a nossa div, apenas mudei o ID (porque não pode ter 1 id para duas divs, id é único, só pode ter um para um elemento, não tem como utilizar o mesmo id para mais de um elemento).
+<input accesskey="v" type="button" name="enviar"  value="Enviar" onclick="ValidEnviar()">
+//Aqui temos um input do tipo botão, com tecla de atalho (acceskey=v), de nome "Enviar" de value="Enviar", e a única coisa de diferente é que, temos uma chamada de javascript.
+//onclick, é um evento do javascript, que diz o que será feito, assim que o usuário clicar. Neste caso, assim que o usuário clicar no botão.
+//"ValidEnviar()", é assim que chamamos uma função no javascript, nossa função tem nome validEnviar, e a sintaxe para chamar a função é da seguinte forma: "nomefunção()"
+//Concluindo, assim que o usuário apertar o botão, será chamado pelo evento onclick via javascript a função ValidEnviar.
+</form>
+//Fim do form.
+</main>
+//Fim do conteúdo principal.
+<footer role="contentinfo">
+<div>Desenvolvido por: Michelle Jacinto</div>
+</footer>
+//Aqui, é o fim da página, tanto funciona somente com a tag "footer", nova do HTML5, como da forma que coloquei: "footer role="contentinfo", utilizando o role contentinfo do Way-Aria.
+</body>
+</html>

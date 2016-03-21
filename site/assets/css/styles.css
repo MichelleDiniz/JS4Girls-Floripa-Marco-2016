@@ -1,0 +1,222 @@
+body {
+  /* Colocar margin: 0; no body faz com que a sua página html fique sempre
+   * 'encostada' nos cantos da janela do browser */
+  margin: 0;
+  /* Estou usando como padrão a fonte 'Lato' que peguei no Google Fonts, caso 
+   * ocorra algum problema em carregar essa fonte, o browser utiliza a próxiam fonte
+   * definida, escolhi a fonte 'Arial', se não renderizar a fonte Arial, o browser vai
+   * vai colocar alguma sem serifa */
+  font-family: 'Lato', Arial, sans-serif;
+  color: #666;
+  font-size: 14px;
+  /* A fonte que peguei no G.Fonts tem diversos pesos: light(300), normal(400), bold(600) */
+  font-weight: 300;
+}
+
+/* O seletor '*' serve para declarar estilos globais, ou seja, todos os elementos receberão 
+ * o estilo que estiver declarado nesse seletor, deve ser usado com cautela */
+
+* {
+  /* A propriedade 'box-sizing' faz com que quando vc coloque um padding em um elemento,
+   * esse valor de padding não seja somado à largura do elemento. */
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+h1 { font-size: 50px; }
+h2 { font-size: 26px; }
+h3 { font-size: 22px; }
+
+a {
+  /* define uma cor verde para os links */
+  color: #52bfa9;
+  /* Remove o sublinhado do link */
+  text-decoration: none;
+}
+/* :hover se refere ao ato de passar o mouse em cima no link */
+a:hover {
+  /* Define a cor rosa e coloca sublinhado quando passar o mouse sobre o link */
+  color: #c02f5b;
+  text-decoration: underline;
+}
+
+.inner-content {
+  /* Define a largura máxima para meu conteúdo */
+  max-width: 1100px;
+  /* Adiciona um espaçamento nas laterais para que o conteudo não encoste na lateral da janela do browser */
+  padding-right: 15px;
+  padding-left: 15px;
+  /* centraliza minha div.inner-content na tela; */
+  margin: 0 auto;
+}
+
+
+
+/* ESTILOS DO HEADER */
+.header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 0 3px 4px rgba(0,0,0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.header .menu {
+  float: right;
+  /* Coloca o texto do menu em caixa alta */
+  text-transform: uppercase;
+}
+
+.header .menu li {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+/* ESTILOS DO BANNER */
+.bg {
+  /* define altura máxima para meu banner */
+  max-height: 450px;
+  /* esconde parte da imagem que for maior que a minha altura */
+  overflow: hidden;
+  position: relative;
+}
+
+.bg img {
+  /* força a minha imagem do .bg a ocupar sempre 100% de largura */
+  width: 100%;
+}
+
+/* essa mágica é legal. a gente agora vai colocar uma máscara escura acima da nossa imagem,
+ * para isso vamos usar o pseudo-elemento :before */
+.bg:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  /* coloco minha mascara em posição absoluta, relativo ao meu .bg que tem posição relativa.
+   * com isso a nossa mascara não vai "ocupar espaço" na nossa tela, mas vai "flutuar" sobre a div .bg */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* mascara de cor preta (RGB: 0 0 0) com alpha opacity de 40% = 0.4 */
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.featured-title {
+  /* Posiciona meu titulo como absoluto em relação ao .bg para ficar "por cima" da imagem */
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  text-align: center;
+  /* define a cor branca para o meu titulo */
+  color: #fff;
+}
+
+.featured-title span {
+  font-size: 22px;
+}
+
+
+
+/* ESTILOS DO CONTEUDO */
+.main-content {
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+
+
+/* ESTILOS DO CONTEUDO EM COLUNAS */
+ul.columns {
+  padding: 0;
+  margin: 50px 0;
+  /* Remove os bullets da lista */
+  list-style: none;
+  font-size: 18px;
+}
+
+.columns li {
+  width: 33%;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.columns .fa {
+  margin: 10px auto;
+  font-size: 50px;
+  color: #52bfa9;
+} 
+
+
+/* ESTILOS DO FORMULARIO */
+.form {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+legend {
+  font-size: 22px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+label {
+    width: 20%;
+    display: inline-block;
+    text-align: right;
+    padding-right: 10px;
+}
+
+input.input {
+  width: 79%;
+  height: 35px;
+}
+
+.btn {
+  border: 4px;
+  padding: 10px 30px;
+  color: #fff;
+  background-color: #52bfa9; 
+  /* Muda o ponteiro do cursor para "hand" no hover */
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #48a592;
+}
+
+.message { text-align: center; }
+
+
+
+/* ESTILOS DO FOOTER */
+footer {
+  /* define cor de background para o footer */
+  background-color: #c02f5b;
+  /* define cor de texto para o footer */
+  color: #fff;
+  text-align: center;
+  padding: 30px
+}
+footer a,
+footer a:hover {
+  /* define a cor do link para o footer */
+  color: #fff;
+}

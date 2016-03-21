@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+//Não declarei o doctype, por ter declarado em todos os códigos...
+</head>
+<body>
+	<h1>
+		Formulário
+	</h1>
+	//Temos uma TAG H1, que já é conhecida de todos.
+		<p>
+	Atenção, campos com * são obrigatórios!
+		</p>
+		//Abrimos uma TAG P, e informei ao usuário que campos com asterísco são obrigatórios, porém, o leitor de telas ao ler esta frase, não lê o asterísco, lendo da seguinte forma: "Atenção, campos com são obrigatórios". Aí fica a pergunta, campos com o que?
+<form>
+//Abrimos a TAG Form para iniciar nosso formulário
+			<label>
+		nome *
+			</label>
+			//Abrimos a Tag label, para colocar o título do nosso campo, neste caso é nome.
+	<input type="text" name="nome">
+	//Construímos um input (ou seja, um campo de entrada), do tipo texto (aceita tudo quanto é tipo de caracter, letras, números...), de nome "NOME".
+			<label>
+		Telefone
+			</label>
+			//Novamente a Tag label, dando título para nosso campo, neste caso, o título telefone.
+	<input type="tel" name="telefone">
+	//Aqui temos um input (campo de entrada) do tipo tel (que só vai aceitar telefone) e de nome ""Telefone".
+			<label>
+		E-mail *
+			</label>
+			//Novamente a Tag label, dando título para nosso campo, neste caso, e-mail.
+	<input type="email" name="e-mail">
+	//Agora nosso input (campo de entrada), é do tipo e-mail (só aceitará e-mails), e de nome "e-mail".
+			<label>
+		Assunto *
+			</label>
+			//Novamente a Tag label, dando título para nosso campo: Assunto
+	<input type="text" name="assunto">
+	//Um input do tipo texto, já visto nesse código.
+			<label>
+		Mensagem *
+			</label>
+			//Novamente a Tag label com o título menssagem.
+	<textarea name="mensagem"></textarea>
+	//E aqui, um campo diferente, não é mais input, e sim, área de texto, com linhas, para o usuário escrever sua mensagem, seu texto. Este campo, pode ser utilizado em área de menssagens, comentários...
+	<input type="button" name="enviar">
+	//Temos um problema, neste botão, por não ser claro para o usuário de leitor de telas, do que se trata o botão, o leitor de telas lê o botão apenas como "BOTÃO", sem nome nenhum.
+	</form>
+	</body>
+	</html>

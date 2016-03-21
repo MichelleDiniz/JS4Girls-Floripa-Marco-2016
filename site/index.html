@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS4Girls Floripa</title>
+
+  <meta charset="UTF-8" />
+
+  <!-- FONTES -->
+  <!-- O google oferece tipos de fonts que não existem em diferentes tipos de Sistemas Operacionais
+      https://www.google.com/fonts. Eu escolhi a fonte "Lato" no site de fonts do google. -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- ICONES - http://fontawesome.io/ -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+  <!-- VALIDACAO FORM -->
+  <script>
+    //Abertura de tag script para escrever javascript dentro do código HTML.
+    function ValidForm() {
+      //estamos iniciando uma função do javascript, com instruções do que deverá ser feito. Função sempre começa com a palavra (function), nome da função e em seguida (){}
+      var name = document.Contactform.name.value;
+      //Aqui declaramos nossa variável, de nome 'name', que recebe: o documento do nosso formulário de nome Contactform (veja a tag form com atenção, olhe o nome), com o valor do campo name(ou seja, o nosso input para nome).
+      //Entendendo o rolo: a nossa variável name, recebe o nosso formulário, e encontra o valor do nosso input, e guarda esse valor.
+      var email = document.Contactform.email.value;
+      //A mesma coisa, nossa variável email, recebe o nosso formulário de nomme Contactform, e o valor do campo email.
+
+      if (name == ""){
+        //Aqui iniciamos um if (se) Ou seja, (se name) nossa variável declarada anteriormente, for igual a "" (vazio")
+        document.getElementById("message_name").innerHTML +="Não pode ficar em branco, por favor, digite seu nome</br>";
+        //Vá lá no documento, procure pelo ID "message_name", e escreva: Não pode ficar em branco, por favor, digite seu nome...
+        document.Contactform.name.focus();
+        // E além de enviar a mensagem, vá no formulário, de nome (Contactform), ache o campo (name), e dê foco do cursor nele.
+        return false;
+        //Se nada disso acontecer (o valor não for vazio, não dê foco, então, retorne falso, e não faça nada!)
+      }
+      if (email == ""){
+        document.getElementById("message_email").innerHTML +="Não pode ficar em branco, digite seu email</br>";
+        document.Contactform.email.focus();
+        return false;
+      }
+    }
+    //A mesma lógica anterior.
+  </script>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="inner-content">
+        <a href="/" title="JS4Girls">
+          <img src="assets/images/js4girls-logo.png" />
+        </a>
+
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <!-- target="_blank" - faz com que o link abra numa nova janela. -->
+              <a href="https://www.facebook.com/JS4Girls.Brasil.Florianopolis/" target="_blank">About us</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/media/set/?set=a.1694531834158535.1073741831.1622496198028766&type=3" target="_blank">Gallery</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <div class="bg">
+        <!-- Colocar o atributo ALT na imagem, faz com o que o leitor de tela leia o conteudo do ALT -->
+        <img src="assets/images/pulseira-filtro-dos-sonhos.jpg" alt="" />
+
+        <div class="featured-title">
+          <h1>Lorem ipsum dolor sit amet</h1>
+          <span>Consectetur adipiscing elit. <br /> Phasellus justo ipsum, condimentum id vulputate.</span>
+        </div>
+      </div>
+
+      <div class="main-content" role="main">
+        <div class="inner-content">
+
+          <h2>A malesuada quis purus. Nam turpis nunc, dictum nec magna vel.</h2>
+
+          <p>Luctus fermentum purus. Donec lacus erat, fermentum id dictum et, mollis non libero. Praesent blandit elementum turpis lobortis fermentum. Integer tristique erat nec commodo porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis nec quam id egestas. Duis tempus quam feugiat mauris ullamcorper porttitor. Morbi vel metus sed leo porta tristique id et metus. Donec ornare non metus et venenatis. Mauris ultrices eu mi vel pretium</p>
+
+          <!-- Aqui vou usa lista <ul> para fazer tres colunas de conteudo -->
+          <ul class="columns">
+            <li>
+              <i class="fa fa-heart"></i>
+              <p>Integer tristique erat nec commodo porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+            <li>
+              <i class="fa fa-code"></i>
+              <p>Praesent sagittis nec quam id egestas. Duis tempus quam feugiat mauris ullamcorper porttitor.</p>
+            </li>
+            <li>
+              <i class="fa fa-line-chart"></i>
+              <p>Donec lacus erat, fermentum id dictum et, mollis non libero. Praesent blandit elementum turpis lobortis fermentum.</p>
+            </li>
+          </ul>
+
+          <!-- Nosso Formulário -->
+          <form class="form" name="Contactform" method="post" role="form" action="">
+            <fieldset>
+
+              <legend>Contact Us</legend>
+
+              <div class="input-group">
+                <label for="name">Name:</label>
+                <input class="input" accesskey="n" type="text" id="name" name="name" />
+                <div class="message" id="message_name" role="alert"></div> 
+              </div>
+
+              <div class="input-group">
+                <label for="email">Email:</label>
+                <input class="input" accesskey="e" type="mail" id="email" name="email" />
+                <div class="message" id="message_email" role="alert"></div> 
+              </div>
+
+              <div class="input-group">
+                <label for="phone">Phone:</label>
+                <input class="input" accesskey="p" type="phone" id="phone" name="phone" />
+              </div>
+
+              <input type="button" accesskey="b" class="btn" onclick="ValidForm()" value="Send">
+
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer role="contentinfo">
+      <div class="inner-content">
+        <a href="https://www.facebook.com/JS4Girls.Brasil.Florianopolis/">JS4Girls Floripa - Março/2016</a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
